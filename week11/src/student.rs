@@ -95,7 +95,8 @@ impl Student {
             return 0.0;
         }
 
-        let total_quality_points: f32 = self.grades.iter().map(|grade| grade.quality_points()).sum();
+        let total_quality_points: f32 =
+            self.grades.iter().map(|grade| grade.quality_points()).sum();
         total_quality_points / total_credits as f32
     }
 }
@@ -203,7 +204,11 @@ impl StudentDatabase {
             return 0.0;
         }
 
-        let total: f32 = self.students.values().map(|student| student.calculate_gpa()).sum();
+        let total: f32 = self
+            .students
+            .values()
+            .map(|student| student.calculate_gpa())
+            .sum();
         total / count as f32
     }
 
